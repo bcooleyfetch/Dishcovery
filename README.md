@@ -7,6 +7,8 @@ _Take Home assessment for iOS Engineer Role_
 
 ### Time Spent: Approximately how long did you spend working on this project? How did you allocate your time?
 
+MVP: Started at 6:30 PM EST and finished first pass of UI and API logic at 7:34 PM EST. Using `AsyncImage` for my image caching, but when testing on device and throttling the network, it performs poorly with caching. Will probably build my own caching service or something in the next iteration. Also no unit tests are written. This is primarily because I want to add in error handling, and rework the UI, so I plan to write tests after that.
+
 ### Trade-offs and Decisions: Did you make any significant trade-offs in your approach?
 
 ### Weakest Part of the Project: What do you think is the weakest part of your project?
