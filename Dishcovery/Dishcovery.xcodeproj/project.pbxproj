@@ -14,19 +14,12 @@
 			remoteGlobalIDString = C08F6DFE2D4ED4360029D99F;
 			remoteInfo = Dishcovery;
 		};
-		C08F6E1A2D4ED4370029D99F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C08F6DF72D4ED4360029D99F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = C08F6DFE2D4ED4360029D99F;
-			remoteInfo = Dishcovery;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C086966F2D50E8B9004A8EC0 /* Dishcovery.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Dishcovery.xctestplan; sourceTree = "<group>"; };
 		C08F6DFF2D4ED4360029D99F /* Dishcovery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dishcovery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C08F6E0F2D4ED4370029D99F /* DishcoveryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DishcoveryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C08F6E192D4ED4370029D99F /* DishcoveryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DishcoveryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -38,11 +31,6 @@
 		C08F6E122D4ED4370029D99F /* DishcoveryTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = DishcoveryTests;
-			sourceTree = "<group>";
-		};
-		C08F6E1C2D4ED4370029D99F /* DishcoveryUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = DishcoveryUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -62,13 +50,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C08F6E162D4ED4370029D99F /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -77,8 +58,8 @@
 			children = (
 				C08F6E012D4ED4360029D99F /* Dishcovery */,
 				C08F6E122D4ED4370029D99F /* DishcoveryTests */,
-				C08F6E1C2D4ED4370029D99F /* DishcoveryUITests */,
 				C08F6E002D4ED4360029D99F /* Products */,
+				C086966F2D50E8B9004A8EC0 /* Dishcovery.xctestplan */,
 			);
 			sourceTree = "<group>";
 		};
@@ -87,7 +68,6 @@
 			children = (
 				C08F6DFF2D4ED4360029D99F /* Dishcovery.app */,
 				C08F6E0F2D4ED4370029D99F /* DishcoveryTests.xctest */,
-				C08F6E192D4ED4370029D99F /* DishcoveryUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -140,29 +120,6 @@
 			productReference = C08F6E0F2D4ED4370029D99F /* DishcoveryTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		C08F6E182D4ED4370029D99F /* DishcoveryUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = C08F6E292D4ED4370029D99F /* Build configuration list for PBXNativeTarget "DishcoveryUITests" */;
-			buildPhases = (
-				C08F6E152D4ED4370029D99F /* Sources */,
-				C08F6E162D4ED4370029D99F /* Frameworks */,
-				C08F6E172D4ED4370029D99F /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				C08F6E1B2D4ED4370029D99F /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				C08F6E1C2D4ED4370029D99F /* DishcoveryUITests */,
-			);
-			name = DishcoveryUITests;
-			packageProductDependencies = (
-			);
-			productName = DishcoveryUITests;
-			productReference = C08F6E192D4ED4370029D99F /* DishcoveryUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -177,10 +134,6 @@
 						CreatedOnToolsVersion = 16.0;
 					};
 					C08F6E0E2D4ED4370029D99F = {
-						CreatedOnToolsVersion = 16.0;
-						TestTargetID = C08F6DFE2D4ED4360029D99F;
-					};
-					C08F6E182D4ED4370029D99F = {
 						CreatedOnToolsVersion = 16.0;
 						TestTargetID = C08F6DFE2D4ED4360029D99F;
 					};
@@ -202,7 +155,6 @@
 			targets = (
 				C08F6DFE2D4ED4360029D99F /* Dishcovery */,
 				C08F6E0E2D4ED4370029D99F /* DishcoveryTests */,
-				C08F6E182D4ED4370029D99F /* DishcoveryUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -216,13 +168,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		C08F6E0D2D4ED4370029D99F /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C08F6E172D4ED4370029D99F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -246,13 +191,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C08F6E152D4ED4370029D99F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -260,11 +198,6 @@
 			isa = PBXTargetDependency;
 			target = C08F6DFE2D4ED4360029D99F /* Dishcovery */;
 			targetProxy = C08F6E102D4ED4370029D99F /* PBXContainerItemProxy */;
-		};
-		C08F6E1B2D4ED4370029D99F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = C08F6DFE2D4ED4360029D99F /* Dishcovery */;
-			targetProxy = C08F6E1A2D4ED4370029D99F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -395,7 +328,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Dishcovery/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"\"";
 				DEVELOPMENT_TEAM = 3JD95QF56H;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -431,7 +364,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Dishcovery/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"\"";
 				DEVELOPMENT_TEAM = 3JD95QF56H;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -467,13 +400,17 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.bradcooley.DishcoveryTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Dishcovery.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Dishcovery";
 			};
 			name = Debug;
@@ -485,46 +422,18 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.bradcooley.DishcoveryTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Dishcovery.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Dishcovery";
-			};
-			name = Release;
-		};
-		C08F6E2A2D4ED4370029D99F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.bradcooley.DishcoveryUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Dishcovery;
-			};
-			name = Debug;
-		};
-		C08F6E2B2D4ED4370029D99F /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.bradcooley.DishcoveryUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Dishcovery;
 			};
 			name = Release;
 		};
@@ -554,15 +463,6 @@
 			buildConfigurations = (
 				C08F6E272D4ED4370029D99F /* Debug */,
 				C08F6E282D4ED4370029D99F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		C08F6E292D4ED4370029D99F /* Build configuration list for PBXNativeTarget "DishcoveryUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				C08F6E2A2D4ED4370029D99F /* Debug */,
-				C08F6E2B2D4ED4370029D99F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

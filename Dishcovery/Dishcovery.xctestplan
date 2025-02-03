@@ -23,14 +23,6 @@
         "identifier" : "C08F6E0E2D4ED4370029D99F",
         "name" : "DishcoveryTests"
       }
-    },
-    {
-      "parallelizable" : true,
-      "target" : {
-        "containerPath" : "container:Dishcovery.xcodeproj",
-        "identifier" : "C08F6E182D4ED4370029D99F",
-        "name" : "DishcoveryUITests"
-      }
     }
   ],
   "version" : 1
