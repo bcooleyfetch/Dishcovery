@@ -8,7 +8,8 @@
 import Foundation
 @testable import Dishcovery
 
-/// A mock API service for unit testing the `RecipeGridViewModel`
+/// A mock API service that conforms to `APIServiceProtocol`, allowing for controlled testing.
+/// This mock service can return predefined recipes or simulate errors.
 final class MockAPIService: APIServiceProtocol {
   var mockRecipes: [Recipe] = []
   var shouldThrowError: APIError?

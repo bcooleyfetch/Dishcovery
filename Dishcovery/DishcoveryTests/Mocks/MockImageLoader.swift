@@ -1,3 +1,9 @@
+//
+//  MockImageLoader.swift
+//  Dishcovery
+//
+//  Created by Brad Cooley on 2/2/25.
+//
 
 import SwiftUI
 @testable import Dishcovery
