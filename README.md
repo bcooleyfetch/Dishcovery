@@ -85,6 +85,15 @@ Throughout the development of V2, I saw my MVVM architecture moving more and mor
 
 Testing was relatively simple, and I tested for the happy path and a few edge cases. I accomplished this fairly well, including coverage for the application's core parts (caching, API, image loading).
 
+#### V2: Final Checklist
+
+With all that I described above, that brought the final checklist of requirements to:
+- ✅ Swift Concurrency
+- ✅ No External Dependencies
+- ✅ Efficient Network Usage
+- ✅ Testing
+- ✅ SwiftUI
+
 ### Time Spent
 
 #### February 1, 2025 (1hr 4mins)
