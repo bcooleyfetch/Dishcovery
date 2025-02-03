@@ -95,27 +95,34 @@ class RecipeViewModel: ObservableObject {
   /// Toggles a cuisine filter.
   /// - Parameter cuisine: The cuisine to toggle.
   func toggleCuisineFilter(_ cuisine: Cuisine) {
+    triggerHapticFeedback()
     if selectedCuisines.contains(cuisine) {
       selectedCuisines.remove(cuisine)
     } else {
       selectedCuisines.insert(cuisine)
     }
   }
-  
+
+  /// Triggers a light haptic feedback when a cuisine filter chip is tapped.
+  private func triggerHapticFeedback() {
+    let generator = UIImpactFeedbackGenerator(style: .light)
+    generator.prepare()
+    generator.impactOccurred()
+  }
+
   /// Filters recipes based on the current search query and selected cuisines.
   private func filterRecipes() {
     withAnimation(.easeInOut(duration: 0.3)) {
       filteredRecipes = recipes.filter { recipe in
         let matchesSearch = searchQuery.isEmpty ||
-                recipe.name.localizedCaseInsensitiveContains(searchQuery) ||
-                recipe.cuisine.id.localizedCaseInsensitiveContains(searchQuery)
+        recipe.name.localizedCaseInsensitiveContains(searchQuery) ||
+        recipe.cuisine.id.localizedCaseInsensitiveContains(searchQuery)
 
-              let matchesCuisine = selectedCuisines.isEmpty ||
-                selectedCuisines.contains(Cuisine.from(recipe.cuisine.id))
+        let matchesCuisine = selectedCuisines.isEmpty ||
+        selectedCuisines.contains(Cuisine.from(recipe.cuisine.id))
 
-              return matchesSearch && matchesCuisine
+        return matchesSearch && matchesCuisine
       }
     }
-//    noResults = filteredRecipes.isEmpty && !apiErrorOccurred
   }
 }
