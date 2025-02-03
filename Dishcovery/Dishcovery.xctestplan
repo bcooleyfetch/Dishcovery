@@ -1,0 +1,29 @@
+{
+  "configurations" : [
+    {
+      "id" : "6D0D7D10-B09A-48C2-9319-ACE5105DAA09",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:Dishcovery.xcodeproj",
+      "identifier" : "C08F6DFE2D4ED4360029D99F",
+      "name" : "Dishcovery"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:Dishcovery.xcodeproj",
+        "identifier" : "C08F6E0E2D4ED4370029D99F",
+        "name" : "DishcoveryTests"
+      }
+    }
+  ],
+  "version" : 1
+}

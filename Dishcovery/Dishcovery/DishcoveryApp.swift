@@ -9,9 +9,9 @@ import SwiftUI
 
 @main
 struct DishcoveryApp: App {
-    var body: some Scene {
-        WindowGroup {
-          RecipeView()
-        }
+  var body: some Scene {
+    WindowGroup {
+      RecipeView()
     }
+  }
 }

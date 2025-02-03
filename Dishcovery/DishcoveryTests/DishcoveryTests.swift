@@ -1,36 +1,25 @@
 //
 //  DishcoveryTests.swift
-//  DishcoveryTests
+//  Dishcovery
 //
-//  Created by Brad Cooley on 2/1/25.
+//  Created by Brad Cooley on 2/2/25.
 //
 
 import XCTest
-@testable import Dishcovery
 
+/// A master test suite that aggregates all unit tests for the project.
 final class DishcoveryTests: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+  
+  /// Runs all test cases in the project.
+  func testAllSuites() {
+    let testSuites: [XCTestCase.Type] = [
+      APIServiceTests.self,
+      ImageCacheTests.self,
+      ImageLoaderTests.self
+    ]
+    
+    for testSuite in testSuites {
+      testSuite.defaultTestSuite.run()
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-
+  }
 }
