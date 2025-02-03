@@ -27,7 +27,7 @@ My app, Dishcovery, was designed entirely by myself with my focus making it feel
 
 #### Demo Video
 
-![Demo video in both light and dark mode](READMEMedia/FullDemo.mp4)
+Because the demo video was too big to upload to Github, you can check it out [here](https://youtube.com/shorts/9Sp_FZFilq4?feature=share).
 
 #### Screenshots
 
