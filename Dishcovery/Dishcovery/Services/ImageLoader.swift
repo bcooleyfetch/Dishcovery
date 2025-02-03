@@ -9,20 +9,20 @@ import SwiftUI
 
 /// Handles image loading with caching, prioritizing larger images when available.
 @MainActor
-class ImageLoader {
-  /// The recipe associated with this image loader.
+class ImageLoader: ImageLoaderProtocol {
   private let recipe: Recipe
-  private let cache = ImageCache()
+  private let cache: ImageCacheProtocol
   private var hasLoadedLargeImage = false
 
   /// Initializes an image loader for a specific recipe.
-  /// - Parameter recipe: The recipe whose images will be loaded.
-  init(recipe: Recipe) {
+  /// - Parameters:
+  ///   - recipe: The recipe whose images will be loaded.
+  ///   - cache: The image cache used for storing and retrieving images.
+  init(recipe: Recipe, cache: ImageCacheProtocol = ImageCache()) {
     self.recipe = recipe
+    self.cache = cache
   }
 
-  /// Loads the best available image.
-  /// - Returns: The cached or downloaded image, prioritizing the large image if available.
   func loadImage() async -> UIImage? {
     // Check if a large image is already cached and use it.
     if let largeURL = recipe.photoURLLarge, await cache.exists(url: largeURL) {
@@ -38,8 +38,6 @@ class ImageLoader {
     return nil
   }
 
-  /// Loads the large image and purges the small image if necessary.
-  /// - Returns: The large image if successfully loaded, otherwise `nil`.
   func loadLargeImage() async -> UIImage? {
     // Avoid reloading the large image if it's already loaded.
     if hasLoadedLargeImage { return nil }

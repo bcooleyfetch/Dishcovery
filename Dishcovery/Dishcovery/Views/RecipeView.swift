@@ -1,5 +1,5 @@
 //
-//  RecipeGridView.swift
+//  RecipeView.swift
 //  Dishcovery
 //
 //  Created by Brad Cooley on 2/1/25.
@@ -8,8 +8,8 @@
 import SwiftUI
 
 /// Displays a grid of recipes with filtering, searching, and context menu support.
-struct RecipeGridView: View {
-  @StateObject private var viewModel = RecipeGridViewModel()
+struct RecipeView: View {
+  @StateObject private var viewModel = RecipeViewModel()
   let columns: [GridItem] = Array(repeating: .init(.flexible(), spacing: 16), count: 2)
 
   /// Configures custom fonts for navigation bar titles.
@@ -39,9 +39,9 @@ struct RecipeGridView: View {
         CuisineFilterBar(viewModel: viewModel)
 
         if viewModel.noResults {
-          NoResultsView()
+          NoResultsView(helperText: viewModel.searchQuery)
         } else {
-          RecipeListView(viewModel: viewModel, columns: columns)
+          RecipeGridView(viewModel: viewModel, columns: columns)
         }
       }
       .navigationTitle("Recipes")
@@ -66,7 +66,7 @@ struct RecipeGridView: View {
 
 /// Displays a horizontal scrollable filter bar for cuisines.
 private struct CuisineFilterBar: View {
-  @ObservedObject var viewModel: RecipeGridViewModel
+  @ObservedObject var viewModel: RecipeViewModel
 
   var body: some View {
     ScrollView(.horizontal, showsIndicators: false) {
@@ -88,22 +88,35 @@ private struct CuisineFilterBar: View {
 
 /// Displays a placeholder when no recipes match the search or filter criteria.
 private struct NoResultsView: View {
+  let helperText: String
+
   var body: some View {
-    VStack {
-      Image(systemName: "magnifyingglass")
-        .font(.largeTitle)
-        .foregroundStyle(.secondary)
-      Text("No recipes found.")
-        .font(.headline)
-        .foregroundStyle(.secondary)
+    if #available(iOS 17, *) {
+      ContentUnavailableView(
+        "No Results for \"\(helperText)\"",
+        systemImage: "magnifyingglass"
+      )
+      .fontDesign(.rounded)
+    } else {
+      VStack(spacing: 12) {
+        Image(systemName: "magnifyingglass")
+          .font(.system(size: 56))
+          .fontDesign(.rounded)
+          .foregroundStyle(.secondary)
+        Text("No Results for \"\(helperText)\"")
+          .font(.title2)
+          .fontWeight(.bold)
+          .fontDesign(.rounded)
+          .foregroundStyle(.primary)
+      }
+      .frame(maxWidth: .infinity, minHeight: 200)
     }
-    .frame(maxWidth: .infinity, minHeight: 200)
   }
 }
 
 /// Displays a list of filtered recipes in a grid layout.
-private struct RecipeListView: View {
-  @ObservedObject var viewModel: RecipeGridViewModel
+private struct RecipeGridView: View {
+  @ObservedObject var viewModel: RecipeViewModel
   let columns: [GridItem]
 
   var body: some View {
@@ -164,5 +177,5 @@ extension View {
 }
 
 #Preview {
-  RecipeGridView()
+  RecipeView()
 }

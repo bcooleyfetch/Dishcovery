@@ -1,8 +1,8 @@
 //
 //  MockRecipe.swift
-//  DishcoveryTests
+//  Dishcovery
 //
-//  Created by Brad Cooley on 2/3/25.
+//  Created by Brad Cooley on 2/2/25.
 //
 
 import Foundation

@@ -1,16 +1,23 @@
+//
+//  RecipeBottomSheetActions.swift
+//  Dishcovery
+//
+//  Created by Brad Cooley on 2/2/25.
+//
+
 import SwiftUI
 
 /// Displays available action buttons based on the recipe's links.
 struct RecipeBottomSheetActions: View {
   let recipe: Recipe
-
+  
   var body: some View {
     VStack(spacing: 16) {
       actionSection
       linkButtons
     }
   }
-
+  
   /// Section header for the action buttons.
   private var actionSection: some View {
     HStack {
@@ -22,7 +29,7 @@ struct RecipeBottomSheetActions: View {
       Spacer()
     }
   }
-
+  
   /// Displays action buttons if links are available.
   private var linkButtons: some View {
     HStack(spacing: 16) {

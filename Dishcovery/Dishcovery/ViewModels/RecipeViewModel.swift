@@ -1,5 +1,5 @@
 //
-//  RecipeGridViewModel.swift
+//  RecipeViewModel.swift
 //  Dishcovery
 //
 //  Created by Brad Cooley on 2/1/25.
@@ -10,7 +10,7 @@ import SwiftUI
 
 /// ViewModel responsible for managing and filtering recipes in the grid view.
 @MainActor
-class RecipeGridViewModel: ObservableObject {
+class RecipeViewModel: ObservableObject {
   /// List of all fetched recipes.
   @Published var recipes: [Recipe] = []
   /// List of recipes filtered based on search and selected cuisines.

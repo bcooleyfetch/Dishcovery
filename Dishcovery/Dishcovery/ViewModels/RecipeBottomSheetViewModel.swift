@@ -1,3 +1,10 @@
+//
+//  RecipeBottomSheetViewModel.swift
+//  Dishcovery
+//
+//  Created by Brad Cooley on 2/2/25.
+//
+
 import SwiftUI
 
 /// ViewModel for `RecipeBottomSheet`, handling image loading logic.

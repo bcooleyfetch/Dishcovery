@@ -1,3 +1,10 @@
+//
+//  RecipeBottomSheetHeader.swift
+//  Dishcovery
+//
+//  Created by Brad Cooley on 2/2/25.
+//
+
 import SwiftUI
 
 /// Displays the recipe header with background image, title, and close button.
@@ -5,7 +12,7 @@ struct RecipeBottomSheetHeader: View {
   let recipe: Recipe
   let image: UIImage?
   let onClose: () -> Void
-
+  
   var body: some View {
     ZStack(alignment: .topTrailing) {
       ZStack(alignment: .leading) {
@@ -15,7 +22,7 @@ struct RecipeBottomSheetHeader: View {
       closeButton
     }
   }
-
+  
   /// The background image with a dimming overlay.
   @ViewBuilder
   private var backgroundImage: some View {
@@ -31,7 +38,7 @@ struct RecipeBottomSheetHeader: View {
         .frame(height: 140)
     }
   }
-
+  
   /// Displays the recipe name and cuisine.
   private var titleAndCuisine: some View {
     VStack(alignment: .leading, spacing: 4) {
@@ -44,7 +51,7 @@ struct RecipeBottomSheetHeader: View {
     }
     .padding()
   }
-
+  
   /// Close button that dismisses the bottom sheet.
   private var closeButton: some View {
     BubbleChip(icon: "xmark") { onClose() }

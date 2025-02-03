@@ -32,12 +32,6 @@ struct RecipeBottomSheet: View {
 
 #Preview {
   RecipeBottomSheet(
-    recipe: Recipe(
-      cuisine: "British",
-      name: "Fish & Chips",
-      photoURLLarge: URL(string: "https://static1.squarespace.com/static/62b0db0c1be03b40824ca350/62b7504d182c361584382f1c/62b8b75d77148a5bbe7e7765/1705787522089/IMG_9320_sq.jpg?format=3500w")!,
-      sourceURL: URL(string: "https://www.google.com/"),
-      youtubeURL: URL(string: "https://www.youtube.com/")
-    )
+    recipe: MockRecipe.sample
   ) { print("Close") }
 }
