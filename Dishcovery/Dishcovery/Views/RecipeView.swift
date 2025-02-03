@@ -38,9 +38,33 @@ struct RecipeView: View {
       ScrollView {
         CuisineFilterBar(viewModel: viewModel)
 
-        if viewModel.noResults {
-          NoResultsView(helperText: viewModel.searchQuery)
-        } else {
+        switch viewModel.currentState {
+        case .loading:
+          ProgressView("Loading recipes...")
+            .frame(maxWidth: .infinity, minHeight: 200)
+
+        case .apiError:
+          NoResultsView(
+            title: "Unable to Load Recipes",
+            message: "Please check your internet connection and try again.",
+            systemImage: "exclamationmark.triangle"
+          )
+
+        case .noApiResults:
+          NoResultsView(
+            title: "No Recipes Available",
+            message: "It looks like there are no recipes to display at the moment.",
+            systemImage: "tray"
+          )
+
+        case .noFilteredResults:
+          NoResultsView(
+            title: "No Results for \"\(viewModel.searchQuery)\"",
+            message: "Try adjusting your search or filters.",
+            systemImage: "magnifyingglass"
+          )
+
+        case .showingRecipes:
           RecipeGridView(viewModel: viewModel, columns: columns)
         }
       }
@@ -88,26 +112,30 @@ private struct CuisineFilterBar: View {
 
 /// Displays a placeholder when no recipes match the search or filter criteria.
 private struct NoResultsView: View {
-  let helperText: String
+  let title: String
+  let message: String
+  let systemImage: String
 
   var body: some View {
     if #available(iOS 17, *) {
-      ContentUnavailableView(
-        "No Results for \"\(helperText)\"",
-        systemImage: "magnifyingglass"
-      )
-      .fontDesign(.rounded)
+      ContentUnavailableView(title, systemImage: systemImage, description: Text(message))
+        .fontDesign(.rounded)
     } else {
       VStack(spacing: 12) {
-        Image(systemName: "magnifyingglass")
+        Image(systemName: systemImage)
           .font(.system(size: 56))
           .fontDesign(.rounded)
           .foregroundStyle(.secondary)
-        Text("No Results for \"\(helperText)\"")
+        Text(title)
           .font(.title2)
           .fontWeight(.bold)
           .fontDesign(.rounded)
           .foregroundStyle(.primary)
+        Text(message)
+          .font(.body)
+          .fontWeight(.medium)
+          .fontDesign(.rounded)
+          .foregroundStyle(.secondary)
       }
       .frame(maxWidth: .infinity, minHeight: 200)
     }
@@ -124,6 +152,7 @@ private struct RecipeGridView: View {
       ForEach(viewModel.filteredRecipes) { recipe in
         RecipeCard(recipe: recipe)
           .frame(minHeight: 100)
+          .contentShape(.contextMenuPreview, RoundedRectangle(cornerRadius: 16))
           .contextMenu { RecipeContextMenu(recipe: recipe) }
           .onTapGesture { viewModel.selectRecipe(recipe) }
       }
